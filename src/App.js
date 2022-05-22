@@ -1,35 +1,21 @@
-import Category from './components/category/Category';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import NavBar from './components/navbar/NavBar';
+import SignIn from './pages/SignIn';
 
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-    },
-    {
-      id: 2,
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-    },
-    {
-      id: 3,
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-    },
-    {
-      id: 4,
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    },
-    {
-      id: 5,
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-    },
-  ];
-
-  return <Category categories={categories} />;
+  return (
+    <Router>
+      <Routes>
+        <Route path='/' element={<NavBar />}>
+          <Route index element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/sign-in' element={<SignIn />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
