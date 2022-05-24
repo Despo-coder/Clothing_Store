@@ -18,7 +18,7 @@ const NavBar = () => {
           <Link to='/shop' className='nav-link'>
             Contact
           </Link>
-          <Link to='/sign-in' className='nav-link'>
+          <Link to='/auth' className='nav-link'>
             Login
           </Link>
           <FaShoppingBag style={{ margin: '6 6' }} />

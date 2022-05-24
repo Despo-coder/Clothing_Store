@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import NavBar from './components/navbar/NavBar';
-import SignIn from './pages/SignIn';
+import SignIn from './Authentication/Authentication';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <Route path='/' element={<NavBar />}>
           <Route index element={<Home />} />
           <Route path='/shop' element={<Shop />} />
-          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/auth' element={<SignIn />} />
         </Route>
       </Routes>
     </Router>
