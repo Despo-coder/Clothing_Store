@@ -12,8 +12,6 @@ import CartDropdown from '../cart/CartDropdown';
 const NavBar = () => {
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
-
-  console.log(currentUser);
   return (
     <Fragment>
       <div className='navigation'>

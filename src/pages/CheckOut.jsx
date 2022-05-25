@@ -4,8 +4,18 @@ import CheckOutItems from './CheckOutItems';
 import { CartContext } from '../context/CartContext';
 
 const CheckOut = () => {
-  const { cartItems, setIsCartOpen, isCartOpen } = useContext(CartContext);
+  const { cartItems, setIsCartOpen, isCartOpen, carttotal } =
+    useContext(CartContext);
 
+  //   //Update the Cart Item Count
+  //   //1. Extract the quantity from CartItems
+  //   //2. Use the reduce Method to add all the contents
+  //   const newCartItem = cartItems.map((item) => item.price * item.quantity);
+  //   const sumWithInitial = newCartItem.reduce(
+  //     (total, cartItem) => total + cartItem,
+  //     0
+  //   );
+  //   console.log(carttotal);
   useEffect(() => {
     setIsCartOpen(isCartOpen);
     // eslint-disable-next-line
@@ -33,7 +43,7 @@ const CheckOut = () => {
       {cartItems.map((cartItem) => (
         <CheckOutItems key={cartItem.id} cartItem={cartItem} />
       ))}
-      <span className='total'>Total: 0</span>
+      <span className='total'>Total: ${carttotal}.00</span>
     </div>
   );
 };
